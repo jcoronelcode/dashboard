@@ -7,7 +7,7 @@ import plotly.graph_objects as go
 
 app = dash.Dash()
 
-df_pais = pd.read_excel("./Info_pais.xlsx")
+df_pais = pd.read_csv("./worl_data.csv", encoding="ISO-8859-1", delimiter=",")
 
 # print(df_pais.head())
 # print(df_pais.columns)
@@ -22,7 +22,7 @@ app.layout = html.Div(
                 dcc.Dropdown(
                     id="ejex",
                     options=[{"label": i, "value": i} for i in df_pais.columns],
-                    value="Renta per capita",
+                    value="Unemployment rate",
                 )
             ],
             style={"width": "48%", "display": "inline-block"},
@@ -32,7 +32,7 @@ app.layout = html.Div(
                 dcc.Dropdown(
                     id="ejey",
                     options=[{"label": i, "value": i} for i in df_pais.columns],
-                    value="Esperanza de vida",
+                    value="Country",
                 )
             ],
             style={"width": "48%", "display": "inline-block"},
