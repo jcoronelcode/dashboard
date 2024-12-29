@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 from dash.dependencies import Input, Output
 
 # Carga de datos
-df_temperatura = pd.read_excel('../Datasets y Scripts Plotly Dash/Datasets/5.2/Temperaturas.xlsx')
+df_temperatura = pd.read_excel('./Temperaturas.xlsx')
 
 
 app = dash.Dash()
